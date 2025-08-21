@@ -41,8 +41,8 @@ public class Hook : MonoBehaviour
 
     public void StartFishing()
     {
-        _length = IdleManager.instance.length - 20;
-        _strength = IdleManager.instance.strength;
+        _length = IdleManager.Instance.length - 20;
+        _strength = IdleManager.Instance.strength;
         _fishCount = 0;
         float time = (-_length) * 0.1f;
 
@@ -60,7 +60,7 @@ public class Hook : MonoBehaviour
             });
         });
 
-        ScreensManager.instance.ChangeScreen(Screens.GAME);
+        ScreensManager.Instance.ChangeScreen(Screens.GAME);
         _collider.enabled = false;
         _canMove = true;
         _hookedFishes.Clear();
@@ -88,8 +88,8 @@ public class Hook : MonoBehaviour
                 _hookedFishes[i].ReserFish();
                 moneyPerCatch += _hookedFishes[i].Type.price;
             }
-            IdleManager.instance.totalGain = moneyPerCatch;
-            ScreensManager.instance.ChangeScreen(Screens.END);
+            IdleManager.Instance.totalGain = moneyPerCatch;
+            ScreensManager.Instance.ChangeScreen(Screens.END);
         });
     }
 

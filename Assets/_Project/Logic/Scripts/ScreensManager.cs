@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScreensManager : MonoBehaviour
 {
-    public static ScreensManager instance;
+    public static ScreensManager Instance;
 
     private GameObject _currentScreen;
 
@@ -19,24 +20,24 @@ public class ScreensManager : MonoBehaviour
     [SerializeField] private Button _strengthButton;
     [SerializeField] private Button _offlineButton;
 
-    [SerializeField] private Text _gameScreenMoney;
-    [SerializeField] private Text _lengthCostText;
-    [SerializeField] private Text _lengthValueText;
-    [SerializeField] private Text _strengthCostText;
-    [SerializeField] private Text _strengthValueText;
-    [SerializeField] private Text _offlineCostText;
-    [SerializeField] private Text _offlineValueText;
-    [SerializeField] private Text _endScreenMoney;
-    [SerializeField] private Text _returnScreenMoney;
+    [SerializeField] private TMP_Text _gameScreenMoney;
+    [SerializeField] private TMP_Text _lengthPriceText;
+    [SerializeField] private TMP_Text _lengthValueText;
+    [SerializeField] private TMP_Text _strengthPriceText;
+    [SerializeField] private TMP_Text _strengthValueText;
+    [SerializeField] private TMP_Text _offlinePriceText;
+    [SerializeField] private TMP_Text _offlineValueText;
+    [SerializeField] private TMP_Text _endScreenMoney;
+    [SerializeField] private TMP_Text _returnScreenMoney;
 
     private int _gameCount;
 
     private void Awake()
     {
-        if (ScreensManager.instance != null)
+        if (ScreensManager.Instance != null)
             Destroy(gameObject);
         else
-            instance = this;
+            Instance = this;
 
         _currentScreen = _mainScreen;
     }
@@ -76,31 +77,31 @@ public class ScreensManager : MonoBehaviour
 
     public void SetEndScreenMoney()
     {
-        _endScreenMoney.text = $"${IdleManager.instance.totalGain}";
+        _endScreenMoney.text = $"${IdleManager.Instance.totalGain}";
     }
 
     public void SetReturnScreenMoney()
     {
-        _returnScreenMoney.text = $"${IdleManager.instance.totalGain} gained while waiting";
+        _returnScreenMoney.text = $"${IdleManager.Instance.totalGain} gained while waiting";
     }
 
     private void UpdateTexts()
     {
-        _gameScreenMoney.text = $"${IdleManager.instance.wallet}";
-        _lengthCostText.text = $"${IdleManager.instance.lengthCost}";
-        _lengthValueText.text = $"{-IdleManager.instance.length} m";
-        _strengthCostText.text = $"${IdleManager.instance.strengthCost}";
-        _strengthValueText.text = $"{IdleManager.instance.strength} fishes";
-        _offlineCostText.text = $"${IdleManager.instance.offlineEarningsCost}";
-        _offlineValueText.text = $"${IdleManager.instance.offlineEarnings} /min";
+        _gameScreenMoney.text = $"${IdleManager.Instance.wallet}";
+        _lengthPriceText.text = $"${IdleManager.Instance.lengthCost}";
+        _lengthValueText.text = $"{-IdleManager.Instance.length} m";
+        _strengthPriceText.text = $"${IdleManager.Instance.strengthCost}";
+        _strengthValueText.text = $"{IdleManager.Instance.strength} fishes";
+        _offlinePriceText.text = $"${IdleManager.Instance.offlineEarningsCost}";
+        _offlineValueText.text = $"${IdleManager.Instance.offlineEarnings} /min";
     }
 
     private void CheckIdles()
     {
-        int lengthCost = IdleManager.instance.lengthCost;
-        int strengthCost = IdleManager.instance.strengthCost;
-        int offlineEarningsCost = IdleManager.instance.offlineEarningsCost;
-        int wallet = IdleManager.instance.wallet;
+        int lengthCost = IdleManager.Instance.lengthCost;
+        int strengthCost = IdleManager.Instance.strengthCost;
+        int offlineEarningsCost = IdleManager.Instance.offlineEarningsCost;
+        int wallet = IdleManager.Instance.wallet;
 
         if(wallet < lengthCost)
             _lengthButton.interactable = false;
