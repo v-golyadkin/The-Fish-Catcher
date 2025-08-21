@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -88,19 +85,19 @@ public class ScreensManager : MonoBehaviour
     private void UpdateTexts()
     {
         _gameScreenMoney.text = $"${IdleManager.Instance.wallet}";
-        _lengthPriceText.text = $"${IdleManager.Instance.lengthCost}";
-        _lengthValueText.text = $"{-IdleManager.Instance.length} m";
-        _strengthPriceText.text = $"${IdleManager.Instance.strengthCost}";
-        _strengthValueText.text = $"{IdleManager.Instance.strength} fishes";
-        _offlinePriceText.text = $"${IdleManager.Instance.offlineEarningsCost}";
-        _offlineValueText.text = $"${IdleManager.Instance.offlineEarnings} /min";
+        _lengthPriceText.text = $"${IdleManager.Instance.LengthUpgradePrice}";
+        _lengthValueText.text = $"{-IdleManager.Instance.Length} m";
+        _strengthPriceText.text = $"${IdleManager.Instance.StrengthUpgradePrice}";
+        _strengthValueText.text = $"{IdleManager.Instance.Strength} fishes";
+        _offlinePriceText.text = $"${IdleManager.Instance.OfflineEarningsUpdatePrice}";
+        _offlineValueText.text = $"${IdleManager.Instance.OfflineEarnings} /min";
     }
 
     private void CheckIdles()
     {
-        int lengthCost = IdleManager.Instance.lengthCost;
-        int strengthCost = IdleManager.Instance.strengthCost;
-        int offlineEarningsCost = IdleManager.Instance.offlineEarningsCost;
+        int lengthCost = IdleManager.Instance.LengthUpgradePrice;
+        int strengthCost = IdleManager.Instance.StrengthUpgradePrice;
+        int offlineEarningsCost = IdleManager.Instance.OfflineEarningsUpdatePrice;
         int wallet = IdleManager.Instance.wallet;
 
         if(wallet < lengthCost)

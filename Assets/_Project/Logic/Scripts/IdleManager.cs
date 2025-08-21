@@ -1,46 +1,19 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Data;
 using UnityEngine;
 
 public class IdleManager : MonoBehaviour
 {
-    //[HideInInspector]
-    //public int length;
+    public int Length { get; private set; }
 
-    //[HideInInspector]
-    //public int strength;
+    public int Strength { get; private set; }
 
-    //[HideInInspector]
-    //public int offlineEarnings;
+    public int OfflineEarnings { get; private set; }
 
-    //[HideInInspector]
-    //public int lengthCost;
+    public int LengthUpgradePrice { get; private set; }
 
-    //[HideInInspector]
-    //public int strengthCost;
+    public int StrengthUpgradePrice { get; private set; }
 
-    //[HideInInspector]
-    //public int offlineEarningsCost;
-
-    //[HideInInspector]
-    //public int wallet;
-
-    //[HideInInspector]
-    //public int totalGain;
-
-    public int length;
-
-    public int strength;
-
-    public int offlineEarnings;
-
-    public int lengthCost;
-
-    public int strengthCost;
-
-    public int offlineEarningsCost;
+    public int OfflineEarningsUpdatePrice { get; private set; }
 
     public int wallet;
 
@@ -78,12 +51,12 @@ public class IdleManager : MonoBehaviour
         else 
             IdleManager.Instance = this;
         //length = -30;
-        length = -PlayerPrefs.GetInt("Length", 30);
-        strength = PlayerPrefs.GetInt("Strength", 3);
-        offlineEarnings = PlayerPrefs.GetInt("Offline", 3);
-        lengthCost = _upgradePrice[-length / 10 - 3];
-        strengthCost = _upgradePrice[strength - 3];
-        offlineEarningsCost = _upgradePrice[offlineEarnings - 3];
+        Length = -PlayerPrefs.GetInt("Length", 30);
+        Strength = PlayerPrefs.GetInt("Strength", 3);
+        OfflineEarnings = PlayerPrefs.GetInt("Offline", 3);
+        LengthUpgradePrice = _upgradePrice[-Length / 10 - 3];
+        StrengthUpgradePrice = _upgradePrice[Strength - 3];
+        OfflineEarningsUpdatePrice = _upgradePrice[OfflineEarnings - 3];
         wallet = PlayerPrefs.GetInt("Wallet", 0);
     }
 
@@ -101,7 +74,7 @@ public class IdleManager : MonoBehaviour
             if(lastDate != string.Empty)
             {
                 DateTime newDate = DateTime.Parse(lastDate);
-                totalGain = (int)((DateTime.Now - newDate).TotalMinutes * offlineEarnings + 1.0);
+                totalGain = (int)((DateTime.Now - newDate).TotalMinutes * OfflineEarnings + 1.0);
                 ScreensManager.Instance.ChangeScreen(Screens.RETURN);
             }
         }
@@ -114,30 +87,30 @@ public class IdleManager : MonoBehaviour
 
     public void BuyLength()
     {
-        length -= 10;
-        wallet -= lengthCost;
-        lengthCost = _upgradePrice[-length / 10 - 3];
-        PlayerPrefs.SetInt("Length", -length);
+        Length -= 10;
+        wallet -= LengthUpgradePrice;
+        LengthUpgradePrice = _upgradePrice[-Length / 10 - 3];
+        PlayerPrefs.SetInt("Length", -Length);
         PlayerPrefs.SetInt("Wallet", wallet);
         ScreensManager.Instance.ChangeScreen(Screens.MAIN);
     }
 
     public void BuyStrength()
     {
-        strength++;
-        wallet -= strengthCost;
-        strengthCost = _upgradePrice[strength - 3];
-        PlayerPrefs.SetInt("Strength", strength);
+        Strength++;
+        wallet -= StrengthUpgradePrice;
+        StrengthUpgradePrice = _upgradePrice[Strength - 3];
+        PlayerPrefs.SetInt("Strength", Strength);
         PlayerPrefs.SetInt("Wallet", wallet);
         ScreensManager.Instance.ChangeScreen(Screens.MAIN);
     }
 
     public void BuyOfflineEarnings()
     {
-        offlineEarnings++;
-        wallet -= offlineEarningsCost;
-        offlineEarningsCost = _upgradePrice[offlineEarnings - 3];
-        PlayerPrefs.SetInt("Offline", offlineEarnings);
+        OfflineEarnings++;
+        wallet -= OfflineEarningsUpdatePrice;
+        OfflineEarningsUpdatePrice = _upgradePrice[OfflineEarnings - 3];
+        PlayerPrefs.SetInt("Offline", OfflineEarnings);
         PlayerPrefs.SetInt("Wallet", wallet);
         ScreensManager.Instance.ChangeScreen(Screens.MAIN);
     }

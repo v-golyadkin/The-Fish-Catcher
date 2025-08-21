@@ -41,8 +41,8 @@ public class Hook : MonoBehaviour
 
     public void StartFishing()
     {
-        _length = IdleManager.Instance.length - 20;
-        _strength = IdleManager.Instance.strength;
+        _length = IdleManager.Instance.Length - 20;
+        _strength = IdleManager.Instance.Strength;
         _fishCount = 0;
         float time = (-_length) * 0.1f;
 
