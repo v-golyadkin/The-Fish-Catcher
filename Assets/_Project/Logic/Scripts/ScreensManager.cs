@@ -84,33 +84,41 @@ public class ScreensManager : MonoBehaviour
 
     private void UpdateTexts()
     {
-        _gameScreenMoney.text = $"${IdleManager.Instance.wallet}";
-        _lengthPriceText.text = $"${IdleManager.Instance.LengthUpgradePrice}";
-        _lengthValueText.text = $"{-IdleManager.Instance.Length} m";
-        _strengthPriceText.text = $"${IdleManager.Instance.StrengthUpgradePrice}";
-        _strengthValueText.text = $"{IdleManager.Instance.Strength} fishes";
-        _offlinePriceText.text = $"${IdleManager.Instance.OfflineEarningsUpdatePrice}";
-        _offlineValueText.text = $"${IdleManager.Instance.OfflineEarnings} /min";
+        var wallet = WalletSystem.Instance;
+        var fishingUpgrade = FishingUpgrade.Instance;
+        var earningsUpdate = OfflineEarningsUpgrade.Instance;
+
+        _gameScreenMoney.text = $"${wallet.Wallet}";
+        _lengthPriceText.text = $"${fishingUpgrade.LengthUpgradePrice}";
+        _lengthValueText.text = $"{-fishingUpgrade.LengthUpgradeLevel} m";
+        _strengthPriceText.text = $"${fishingUpgrade.StrengthUpgradePrice}";
+        _strengthValueText.text = $"{fishingUpgrade.StrengthUpgradeLevel} fishes";
+        _offlinePriceText.text = $"${earningsUpdate.OfflineEarningsUpgradePrice}";
+        _offlineValueText.text = $"${earningsUpdate.OfflineEarningsUpgradeLevel} /min";
     }
 
     private void CheckIdles()
     {
-        int lengthCost = IdleManager.Instance.LengthUpgradePrice;
-        int strengthCost = IdleManager.Instance.StrengthUpgradePrice;
-        int offlineEarningsCost = IdleManager.Instance.OfflineEarningsUpdatePrice;
-        int wallet = IdleManager.Instance.wallet;
+        //int lengthCost = IdleManager.Instance.LengthUpgradePrice;
+        //int strengthCost = IdleManager.Instance.StrengthUpgradePrice;
+        //int offlineEarningsCost = IdleManager.Instance.OfflineEarningsUpdatePrice;
+        //int wallet = IdleManager.Instance.wallet;
 
-        if(wallet < lengthCost)
+        var wallet = WalletSystem.Instance;
+        var fishingUpgrade = FishingUpgrade.Instance;
+        var earningsUpdate = OfflineEarningsUpgrade.Instance;
+
+        if(wallet.CanAfford(fishingUpgrade.LengthUpgradePrice))
             _lengthButton.interactable = false;
         else 
             _lengthButton.interactable = true;
 
-        if(wallet < strengthCost)
+        if(wallet.CanAfford(fishingUpgrade.StrengthUpgradePrice))
             _strengthButton.interactable = false;
         else
             _strengthButton.interactable = true;
 
-        if(wallet < offlineEarningsCost)
+        if(wallet.CanAfford(earningsUpdate.OfflineEarningsUpgradePrice))
             _offlineButton.interactable = false;
         else
             _offlineButton.interactable = true;

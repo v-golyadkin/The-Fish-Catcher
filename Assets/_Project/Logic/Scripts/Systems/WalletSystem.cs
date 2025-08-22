@@ -1,5 +1,5 @@
 using UnityEngine;
-public class WalletManager : Singleton<WalletManager>
+public class WalletSystem : Singleton<WalletSystem>
 {
     public int Wallet { get; private set; }
 
@@ -8,11 +8,13 @@ public class WalletManager : Singleton<WalletManager>
         base.Awake();
 
         Wallet = PlayerPrefs.GetInt("Wallet", Wallet);
+        AddMoney(500);
     }
 
     public void AddMoney(int amount)
     {
         Wallet += amount;
+        PlayerPrefs.SetInt("Wallet", Wallet);
     }
 
     public void SpendMoney(int amount)
@@ -20,6 +22,7 @@ public class WalletManager : Singleton<WalletManager>
         if (CanAfford(amount))
         {
             Wallet -= amount;
+            PlayerPrefs.SetInt("Wallet", Wallet);
         }
     }
 

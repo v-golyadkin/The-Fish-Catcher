@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 139112074}
   - component: {fileID: 139112073}
   - component: {fileID: 139112072}
+  - component: {fileID: 139112076}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -311,6 +312,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &139112076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139112071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42be49d109a53194484ed5dcfecc80dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeSystem: {fileID: 1519822689}
 --- !u!1 &152872395
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,12 +445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad82d24658042c4e859a54fe8d60923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 0
-  strength: 0
-  offlineEarnings: 0
-  lengthCost: 0
-  strengthCost: 0
-  offlineEarningsCost: 0
   wallet: 0
   totalGain: 0
 --- !u!114 &152872399
@@ -1304,18 +1312,18 @@ PrefabInstance:
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 152872398}
+      objectReference: {fileID: 139112076}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyOfflineEarnings
+      value: OfflineEarningsUpgradeOnClick
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: IdleManager, Assembly-CSharp
+      value: UpgradeUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2124,6 +2132,92 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517255110}
   m_CullTransparentMesh: 1
+--- !u!1 &1519822685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519822690}
+  - component: {fileID: 1519822689}
+  - component: {fileID: 1519822688}
+  - component: {fileID: 1519822687}
+  - component: {fileID: 1519822686}
+  m_Layer: 0
+  m_Name: '[SYSTEMS]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1519822686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6eb95ab3c531a42b375a09ea96b5de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1519822687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0121e82c4abb4488789348599c1242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1519822688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a4bb6f2bee0094fb0168c635fa9d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1519822689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11a362412b43914b9a35ca1b3378c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallet: {fileID: 1519822688}
+  fishingUpgrade: {fileID: 1519822687}
+  offlineEarningsUpgrade: {fileID: 1519822686}
+--- !u!4 &1519822690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1628913880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2195,18 +2289,18 @@ PrefabInstance:
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 152872398}
+      objectReference: {fileID: 139112076}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyStrength
+      value: StrengthUpgradeOnClick
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: IdleManager, Assembly-CSharp
+      value: UpgradeUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2921,18 +3015,18 @@ PrefabInstance:
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 152872398}
+      objectReference: {fileID: 139112076}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BuyLength
+      value: LengthUpgradeOnClick
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: IdleManager, Assembly-CSharp
+      value: UpgradeUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7259366011882395980, guid: 702059e0d7d5d784a82a77e970897365, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3033,3 +3127,4 @@ SceneRoots:
   - {fileID: 139112075}
   - {fileID: 438718589}
   - {fileID: 152872397}
+  - {fileID: 1519822690}
