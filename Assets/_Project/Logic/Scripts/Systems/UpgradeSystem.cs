@@ -13,7 +13,8 @@ public class UpgradeSystem : MonoBehaviour
         {
             wallet.SpendMoney(fishingUpgrade.LengthUpgradePrice);
             fishingUpgrade.LengthUpgrade();
-            ScreensManager.Instance.ChangeScreen(Screens.MAIN);
+            UITextUpdater.Instance.UpdateMainScreenText();
+            ScreenSelectorSystem.Instance.ShowMainScreen();
         }
     }
 
@@ -23,7 +24,8 @@ public class UpgradeSystem : MonoBehaviour
         {
             wallet.SpendMoney(fishingUpgrade.StrengthUpgradePrice);
             fishingUpgrade.StrengthUpgrade();
-            ScreensManager.Instance.ChangeScreen(Screens.MAIN);
+            UITextUpdater.Instance.UpdateMainScreenText();
+            ScreenSelectorSystem.Instance.ShowMainScreen();
         }
     }
 
@@ -33,7 +35,8 @@ public class UpgradeSystem : MonoBehaviour
         {
             wallet.SpendMoney(offlineEarningsUpgrade.OfflineEarningsUpgradePrice);
             offlineEarningsUpgrade.EarningsUpgrade();
-            ScreensManager.Instance.ChangeScreen(Screens.MAIN);
+            UITextUpdater.Instance.UpdateMainScreenText();
+            ScreenSelectorSystem.Instance.ShowMainScreen();
         }
     }
 }

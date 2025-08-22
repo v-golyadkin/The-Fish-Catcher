@@ -1,9 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using DG.Tweening;
 
+[RequireComponent(typeof(Collider2D))]
 public class Hook : MonoBehaviour
 {
     [SerializeField] private Transform _hookedTransform;
@@ -41,8 +40,8 @@ public class Hook : MonoBehaviour
 
     public void StartFishing()
     {
-        _length = IdleManager.Instance.Length - 20;
-        _strength = IdleManager.Instance.Strength;
+        _length = FishingUpgrade.Instance.LengthUpgradeLevel - 20;
+        _strength = FishingUpgrade.Instance.StrengthUpgradeLevel;
         _fishCount = 0;
         float time = (-_length) * 0.1f;
 
@@ -60,7 +59,7 @@ public class Hook : MonoBehaviour
             });
         });
 
-        ScreensManager.Instance.ChangeScreen(Screens.GAME);
+        ScreenSelectorSystem.Instance.ShowGameScreen();
         _collider.enabled = false;
         _canMove = true;
         _hookedFishes.Clear();
@@ -88,8 +87,10 @@ public class Hook : MonoBehaviour
                 _hookedFishes[i].ReserFish();
                 moneyPerCatch += _hookedFishes[i].Type.price;
             }
-            IdleManager.Instance.totalGain = moneyPerCatch;
-            ScreensManager.Instance.ChangeScreen(Screens.END);
+            WalletSystem.Instance.CalculateMoneyGainPerCatch(moneyPerCatch);
+            ScreenSelectorSystem.Instance.ShowEndScreen();
+            
+            _hookedFishes.Clear();
         });
     }
 

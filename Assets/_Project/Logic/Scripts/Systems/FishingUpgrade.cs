@@ -35,22 +35,22 @@ public class FishingUpgrade : Singleton<FishingUpgrade>
         base.Awake();
 
         LengthUpgradeLevel = -PlayerPrefs.GetInt("Length", 30);
-        StrengthUpgradeLevel = PlayerPrefs.GetInt("Strength", 3);
+        StrengthUpgradeLevel = PlayerPrefs.GetInt("Strength", 1);
         LengthUpgradePrice = _upgradesPrices[-LengthUpgradeLevel / 10 - 3];
-        StrengthUpgradePrice = _upgradesPrices[StrengthUpgradeLevel - 3];
+        StrengthUpgradePrice = _upgradesPrices[StrengthUpgradeLevel - 1];
     }
 
     public void LengthUpgrade()
     {
         LengthUpgradeLevel -= 10;
         LengthUpgradePrice = _upgradesPrices[-LengthUpgradeLevel / 10 - 3];
-        PlayerPrefs.SetInt("Length", LengthUpgradeLevel);
+        PlayerPrefs.SetInt("Length", -LengthUpgradeLevel);
     }
 
     public void StrengthUpgrade()
     {
         StrengthUpgradeLevel++;
-        StrengthUpgradePrice = _upgradesPrices[StrengthUpgradeLevel - 3];
+        StrengthUpgradePrice = _upgradesPrices[StrengthUpgradeLevel - 1];
         PlayerPrefs.SetInt("Strength", StrengthUpgradeLevel);
     }
 }

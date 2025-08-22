@@ -1,4 +1,4 @@
-public enum Screens
+public enum Screen
 {
     MAIN,
     END,

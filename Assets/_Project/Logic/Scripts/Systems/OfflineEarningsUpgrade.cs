@@ -39,9 +39,19 @@ public class OfflineEarningsUpgrade : Singleton<OfflineEarningsUpgrade>
         OfflineEarningsUpgradePrice = _upgradesPrices[OfflineEarningsUpgradeLevel - 1];
     }
 
-    public void CalculateOfflineEarnings(DateTime lastDataTime)
+    public int CalculateOfflineEarnings(string lastDataTime, float minOfflineDurationInSeconds = 0f, float maxOfflineDurationInSeconds = 0f)
     {
-        totalMoneyGain = (int)((DateTime.Now - lastDataTime).TotalMinutes * OfflineEarningsUpgradeLevel + 1.0);
+        DateTime lastData = DateTime.Parse(lastDataTime);
+        TimeSpan offlineTime = DateTime.Now - lastData;
+
+        if(offlineTime.TotalSeconds < minOfflineDurationInSeconds)
+        {
+            return 0;
+        }
+
+        float effectiveMinutes = Mathf.Min((float)offlineTime.TotalMinutes, maxOfflineDurationInSeconds / 60f);
+        totalMoneyGain = (int)((effectiveMinutes * OfflineEarningsUpgradeLevel));
+        return totalMoneyGain;
     }
 
     public void EarningsUpgrade()

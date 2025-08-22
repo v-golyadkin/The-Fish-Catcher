@@ -3,15 +3,16 @@ public class WalletSystem : Singleton<WalletSystem>
 {
     public int Wallet { get; private set; }
 
+    private int _moneyGainPerCatch;
+
     protected override void Awake()
     {
         base.Awake();
 
         Wallet = PlayerPrefs.GetInt("Wallet", Wallet);
-        AddMoney(500);
     }
 
-    public void AddMoney(int amount)
+    private void AddMoney(int amount)
     {
         Wallet += amount;
         PlayerPrefs.SetInt("Wallet", Wallet);
@@ -29,5 +30,17 @@ public class WalletSystem : Singleton<WalletSystem>
     public bool CanAfford(int price)
     {
         return Wallet >= price;
+    }
+
+    public void CalculateMoneyGainPerCatch(int amount)
+    {
+        _moneyGainPerCatch += amount;
+        UITextUpdater.Instance.SetEndScreenMoney(_moneyGainPerCatch);
+    }
+
+    public void AddMoneyPerCatch(int catchMultiplier = 1)
+    {
+        AddMoney(_moneyGainPerCatch * catchMultiplier);
+        _moneyGainPerCatch = 0;
     }
 }

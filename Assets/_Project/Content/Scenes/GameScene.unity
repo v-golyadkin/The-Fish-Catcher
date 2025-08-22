@@ -219,6 +219,8 @@ GameObject:
   - component: {fileID: 139112073}
   - component: {fileID: 139112072}
   - component: {fileID: 139112076}
+  - component: {fileID: 139112077}
+  - component: {fileID: 139112078}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -325,156 +327,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeSystem: {fileID: 1519822689}
---- !u!1 &152872395
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 152872397}
-  - component: {fileID: 152872396}
-  - component: {fileID: 152872398}
-  - component: {fileID: 152872399}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &152872396
+  lengthUpgradeButton: {fileID: 963968274}
+  strengthUpgradeButton: {fileID: 1628913884}
+  offlineUpgradeButton: {fileID: 831114271}
+--- !u!114 &139112077
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152872395}
+  m_GameObject: {fileID: 139112071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9248ec02d20ed54491d24cbd054dd07, type: 3}
+  m_Script: {fileID: 11500000, guid: 286bd315eb4731d42952002359304787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fishPrefab: {fileID: 9129775682505783239, guid: 8c6006cfc8ca8ac4093a0c5e7dc644eb, type: 3}
-  _fishTypes:
-  - price: 20
-    fishCount: 10
-    minLength: -30
-    maxLength: -50
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 293e5731ac22b314d8c60aa5666bcbf7, type: 3}
-  - price: 25
-    fishCount: 10
-    minLength: -45
-    maxLength: -65
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 41616117f3340824f919fa0f41ba872d, type: 3}
-  - price: 30
-    fishCount: 10
-    minLength: -60
-    maxLength: -80
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: addbc7c811ccf3d48ad91f0cd8a1b561, type: 3}
-  - price: 40
-    fishCount: 10
-    minLength: -75
-    maxLength: -95
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 06a39c346cf959c4a96afda5ce5b4929, type: 3}
-  - price: 50
-    fishCount: 10
-    minLength: -90
-    maxLength: -110
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 23b848801c1135d4bbdbd85ef575f864, type: 3}
-  - price: 65
-    fishCount: 10
-    minLength: -105
-    maxLength: -125
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: e0499ffba3284c94e843075b1dd44464, type: 3}
-  - price: 75
-    fishCount: 10
-    minLength: -120
-    maxLength: -140
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 27f770a3d838bbc46a68789cac7263b9, type: 3}
-  - price: 90
-    fishCount: 10
-    minLength: -135
-    maxLength: -155
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 9cdbf54ad178399459806186c9697322, type: 3}
-  - price: 110
-    fishCount: 10
-    minLength: -150
-    maxLength: -170
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: a3b460985d49e4143b2dd61d9a913f29, type: 3}
-  - price: 120
-    fishCount: 10
-    minLength: -165
-    maxLength: -185
-    colliderRadius: 0.2
-    sprite: {fileID: 21300000, guid: 4ccf225fad046bb4990027b34eae1271, type: 3}
---- !u!4 &152872397
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152872395}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &152872398
+--- !u!114 &139112078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152872395}
+  m_GameObject: {fileID: 139112071}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aad82d24658042c4e859a54fe8d60923, type: 3}
+  m_Script: {fileID: 11500000, guid: fa4736b1ac893a349b8971633c19332d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallet: 0
-  totalGain: 0
---- !u!114 &152872399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152872395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6a6d2d92fd8084989b727fadb1b1eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _endScreen: {fileID: 645353531}
-  _gameScreen: {fileID: 519327141}
-  _mainScreen: {fileID: 1448524356}
-  _returnScreen: {fileID: 500745487}
-  _lengthButton: {fileID: 963968274}
-  _strengthButton: {fileID: 1628913884}
-  _offlineButton: {fileID: 831114271}
-  _gameScreenMoney: {fileID: 1735205115}
-  _lengthPriceText: {fileID: 1088830618}
-  _lengthValueText: {fileID: 1079401764}
-  _strengthPriceText: {fileID: 1628913883}
-  _strengthValueText: {fileID: 1628913882}
-  _offlinePriceText: {fileID: 831114270}
-  _offlineValueText: {fileID: 831114269}
-  _endScreenMoney: {fileID: 2026860789}
-  _returnScreenMoney: {fileID: 920988090}
+  gameScreenMoney: {fileID: 1735205115}
+  lengthPriceText: {fileID: 1088830618}
+  lengthValueText: {fileID: 1079401764}
+  strengthPriceText: {fileID: 1628913883}
+  strengthValueText: {fileID: 1628913882}
+  offlinePriceText: {fileID: 831114270}
+  offlineValueText: {fileID: 831114269}
+  endScreenMoney: {fileID: 2026860789}
+  returnScreenMoney: {fileID: 920988090}
 --- !u!1 &290571616
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,9 +843,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152872398}
-        m_TargetAssemblyTypeName: IdleManager, Assembly-CSharp
-        m_MethodName: CollectMoney
+      - m_Target: {fileID: 139112077}
+        m_TargetAssemblyTypeName: CollectButtonHandler, Assembly-CSharp
+        m_MethodName: CollectButtonOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1826,9 +1714,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152872398}
-        m_TargetAssemblyTypeName: IdleManager, Assembly-CSharp
-        m_MethodName: CollectDoubleMoney
+      - m_Target: {fileID: 139112077}
+        m_TargetAssemblyTypeName: CollectButtonHandler, Assembly-CSharp
+        m_MethodName: CollectDoubleButtonOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2145,6 +2033,10 @@ GameObject:
   - component: {fileID: 1519822688}
   - component: {fileID: 1519822687}
   - component: {fileID: 1519822686}
+  - component: {fileID: 1519822691}
+  - component: {fileID: 1519822692}
+  - component: {fileID: 1519822693}
+  - component: {fileID: 1519822695}
   m_Layer: 0
   m_Name: '[SYSTEMS]'
   m_TagString: Untagged
@@ -2218,6 +2110,123 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1519822691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d3ee67f31a4ac4ea60f23730ac12bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainScreen: {fileID: 1448524356}
+  endScreen: {fileID: 645353531}
+  returnScreen: {fileID: 500745487}
+  gameScreen: {fileID: 519327141}
+--- !u!114 &1519822692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9248ec02d20ed54491d24cbd054dd07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fishPrefab: {fileID: 9129775682505783239, guid: 8c6006cfc8ca8ac4093a0c5e7dc644eb, type: 3}
+  _fishTypes:
+  - price: 20
+    fishCount: 10
+    minLength: -30
+    maxLength: -50
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 293e5731ac22b314d8c60aa5666bcbf7, type: 3}
+  - price: 25
+    fishCount: 10
+    minLength: -45
+    maxLength: -65
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 41616117f3340824f919fa0f41ba872d, type: 3}
+  - price: 30
+    fishCount: 10
+    minLength: -60
+    maxLength: -80
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: addbc7c811ccf3d48ad91f0cd8a1b561, type: 3}
+  - price: 40
+    fishCount: 10
+    minLength: -75
+    maxLength: -95
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 06a39c346cf959c4a96afda5ce5b4929, type: 3}
+  - price: 50
+    fishCount: 10
+    minLength: -90
+    maxLength: -110
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 23b848801c1135d4bbdbd85ef575f864, type: 3}
+  - price: 65
+    fishCount: 10
+    minLength: -105
+    maxLength: -125
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: e0499ffba3284c94e843075b1dd44464, type: 3}
+  - price: 75
+    fishCount: 10
+    minLength: -120
+    maxLength: -140
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 27f770a3d838bbc46a68789cac7263b9, type: 3}
+  - price: 90
+    fishCount: 10
+    minLength: -135
+    maxLength: -155
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 9cdbf54ad178399459806186c9697322, type: 3}
+  - price: 110
+    fishCount: 10
+    minLength: -150
+    maxLength: -170
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: a3b460985d49e4143b2dd61d9a913f29, type: 3}
+  - price: 120
+    fishCount: 10
+    minLength: -165
+    maxLength: -185
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 4ccf225fad046bb4990027b34eae1271, type: 3}
+--- !u!114 &1519822693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b203db0207f63e6459e8a71d88dd7b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minPauseDurationInSeconds: 60
+  maxPauseDurationInSeconds: 3600
+  debugMod: 1
+--- !u!114 &1519822695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519822685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb23b79e4128204d860ddcda7c9f60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1628913880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2515,9 +2524,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152872398}
-        m_TargetAssemblyTypeName: IdleManager, Assembly-CSharp
-        m_MethodName: CollectMoney
+      - m_Target: {fileID: 139112077}
+        m_TargetAssemblyTypeName: CollectButtonHandler, Assembly-CSharp
+        m_MethodName: CollectButtonOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3126,5 +3135,4 @@ SceneRoots:
   - {fileID: 2014903930}
   - {fileID: 139112075}
   - {fileID: 438718589}
-  - {fileID: 152872397}
   - {fileID: 1519822690}
