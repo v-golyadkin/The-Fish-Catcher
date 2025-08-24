@@ -35,8 +35,8 @@ public class OfflineEarningsUpgrade : Singleton<OfflineEarningsUpgrade>
     {
         base.Awake();
 
-        OfflineEarningsUpgradeLevel = PlayerPrefs.GetInt("Offline", 1);
-        OfflineEarningsUpgradePrice = _upgradesPrices[OfflineEarningsUpgradeLevel - 1];
+        OfflineEarningsUpgradeLevel = PlayerPrefs.GetInt("Offline", 0);
+        OfflineEarningsUpgradePrice = _upgradesPrices[OfflineEarningsUpgradeLevel];
     }
 
     public int CalculateOfflineEarnings(string lastDataTime, float minOfflineDurationInSeconds = 0f, float maxOfflineDurationInSeconds = 0f)
@@ -57,7 +57,7 @@ public class OfflineEarningsUpgrade : Singleton<OfflineEarningsUpgrade>
     public void EarningsUpgrade()
     {
         OfflineEarningsUpgradeLevel++;
-        OfflineEarningsUpgradePrice = _upgradesPrices[OfflineEarningsUpgradeLevel - 1];
+        OfflineEarningsUpgradePrice = _upgradesPrices[OfflineEarningsUpgradeLevel];
         PlayerPrefs.SetInt("Offline", OfflineEarningsUpgradeLevel);
     }
 }
