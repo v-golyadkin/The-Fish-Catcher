@@ -84,7 +84,7 @@ public class Hook : MonoBehaviour
             for(int i = 0; i < _hookedFishes.Count; i++)
             {
                 _hookedFishes[i].transform.SetParent(null);
-                _hookedFishes[i].ReserFish();
+                _hookedFishes[i].ResetFish();
                 moneyPerCatch += _hookedFishes[i].Type.price;
             }
             WalletSystem.Instance.CalculateMoneyGainPerCatch(moneyPerCatch);

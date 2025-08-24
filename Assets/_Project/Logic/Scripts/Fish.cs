@@ -32,7 +32,7 @@ public class Fish : MonoBehaviour
         _screenLeft = Camera.main.ScreenToWorldPoint(Vector3.zero).x;
     }
 
-    public void ReserFish()
+    public void ResetFish()
     {
         if(_tweener != null)
             _tweener.Kill(false);

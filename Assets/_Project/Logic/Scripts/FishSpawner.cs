@@ -16,7 +16,7 @@ public class FishSpawner : MonoBehaviour
             {
                 Fish fish = UnityEngine.Object.Instantiate<Fish>(_fishPrefab);
                 fish.Type = _fishTypes[i];
-                fish.ReserFish();
+                fish.ResetFish();
                 counter++;
             }
         }
