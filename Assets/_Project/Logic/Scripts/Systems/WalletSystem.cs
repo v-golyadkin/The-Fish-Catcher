@@ -1,4 +1,6 @@
 using UnityEngine;
+using PlayerPrefs = RedefineYG.PlayerPrefs;
+
 public class WalletSystem : Singleton<WalletSystem>
 {
     public int Wallet { get; private set; }
@@ -16,6 +18,7 @@ public class WalletSystem : Singleton<WalletSystem>
     {
         Wallet += amount;
         PlayerPrefs.SetInt("Wallet", Wallet);
+        PlayerPrefs.Save();
     }
 
     public void SpendMoney(int amount)
@@ -24,6 +27,7 @@ public class WalletSystem : Singleton<WalletSystem>
         {
             Wallet -= amount;
             PlayerPrefs.SetInt("Wallet", Wallet);
+            PlayerPrefs.Save();
         }
     }
 

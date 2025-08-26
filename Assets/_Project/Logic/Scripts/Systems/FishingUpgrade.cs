@@ -1,4 +1,5 @@
 using UnityEngine;
+using PlayerPrefs = RedefineYG.PlayerPrefs;
 
 public class FishingUpgrade : Singleton<FishingUpgrade>
 {
@@ -45,6 +46,7 @@ public class FishingUpgrade : Singleton<FishingUpgrade>
         LengthUpgradeLevel -= 10;
         LengthUpgradePrice = _upgradesPrices[-LengthUpgradeLevel / 10 - 3];
         PlayerPrefs.SetInt("Length", -LengthUpgradeLevel);
+        PlayerPrefs.Save();
     }
 
     public void StrengthUpgrade()
@@ -52,5 +54,6 @@ public class FishingUpgrade : Singleton<FishingUpgrade>
         StrengthUpgradeLevel++;
         StrengthUpgradePrice = _upgradesPrices[StrengthUpgradeLevel - 1];
         PlayerPrefs.SetInt("Strength", StrengthUpgradeLevel);
+        PlayerPrefs.Save();
     }
 }

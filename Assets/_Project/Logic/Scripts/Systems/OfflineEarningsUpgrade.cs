@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using PlayerPrefs = RedefineYG.PlayerPrefs;
 
 public class OfflineEarningsUpgrade : Singleton<OfflineEarningsUpgrade>
 {
@@ -59,5 +60,6 @@ public class OfflineEarningsUpgrade : Singleton<OfflineEarningsUpgrade>
         OfflineEarningsUpgradeLevel++;
         OfflineEarningsUpgradePrice = _upgradesPrices[OfflineEarningsUpgradeLevel];
         PlayerPrefs.SetInt("Offline", OfflineEarningsUpgradeLevel);
+        PlayerPrefs.Save();
     }
 }
