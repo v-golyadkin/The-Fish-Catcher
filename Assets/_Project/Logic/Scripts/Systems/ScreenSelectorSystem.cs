@@ -9,13 +9,6 @@ public class ScreenSelectorSystem : Singleton<ScreenSelectorSystem>
     [SerializeField] private GameObject returnScreen;
     [SerializeField] private GameObject gameScreen;
 
-    protected override void Awake()
-    {
-        base.Awake();
-
-        _currentScreen = mainScreen;
-    }
-
     public void ShowMainScreen() => ChangeScreen(Screen.MAIN);
     public void ShowGameScreen() => ChangeScreen(Screen.GAME);
     public void ShowReturnScreen() => ChangeScreen(Screen.RETURN);
@@ -26,7 +19,7 @@ public class ScreenSelectorSystem : Singleton<ScreenSelectorSystem>
 
     private void ChangeScreen(Screen screen)
     {
-        _currentScreen.SetActive(false);
+        _currentScreen?.SetActive(false);
 
         switch (screen)
         {
