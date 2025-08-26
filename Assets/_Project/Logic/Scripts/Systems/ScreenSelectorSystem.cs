@@ -12,10 +12,8 @@ public class ScreenSelectorSystem : Singleton<ScreenSelectorSystem>
     public void ShowMainScreen() => ChangeScreen(Screen.MAIN);
     public void ShowGameScreen() => ChangeScreen(Screen.GAME);
     public void ShowReturnScreen() => ChangeScreen(Screen.RETURN);
-    public void ShowEndScreen()
-    {
-        ChangeScreen(Screen.END);
-    }
+    public void ShowEndScreen() => ChangeScreen(Screen.END);
+
 
     private void ChangeScreen(Screen screen)
     {
