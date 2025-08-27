@@ -2200,6 +2200,24 @@ MonoBehaviour:
     maxLength: -185
     colliderRadius: 0.2
     sprite: {fileID: 21300000, guid: 4ccf225fad046bb4990027b34eae1271, type: 3}
+  - price: 140
+    fishCount: 10
+    minLength: -180
+    maxLength: -200
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: de87ad883ff3b3c4eb093fba7afdbf85, type: 3}
+  - price: 160
+    fishCount: 10
+    minLength: -200
+    maxLength: -220
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: 52f47cc8494d4c7429b10c68155bfadf, type: 3}
+  - price: 180
+    fishCount: 10
+    minLength: -220
+    maxLength: -400
+    colliderRadius: 0.2
+    sprite: {fileID: 21300000, guid: aac626bc4fc6fc340acab236785cb7ff, type: 3}
 --- !u!114 &1519822693
 MonoBehaviour:
   m_ObjectHideFlags: 0
